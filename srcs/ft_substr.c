@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:07:27 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/21 20:09:55 by mqueguin         ###   ########.fr       */
+/*   Created: 2020/09/18 14:45:40 by mqueguin          #+#    #+#             */
+/*   Updated: 2020/09/18 20:08:42 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*str;
 	size_t	i;
-	size_t	len;
+	size_t	j;
 
-	if (!src)
-		return (0);
 	i = 0;
-	len = ft_strlen(src);
-	if (!dst || !src)
-		return (0);
-	if (dstsize == 0)
-		return (len);
-	while (src[i] && i < dstsize - 1)
-	{
-		dst[i] = src[i];
+	if (!s)
+		return (NULL);
+	while (i < start)
 		i++;
+	if (!(str = (char*)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	j = 0;
+	while (s[i] && j < len)
+	{
+		str[j] = s[i];
+		i++;
+		j++;
 	}
-	dst[i] = '\0';
-	return (len);
+	str[j] = '\0';
+	return (str);
 }
+
+/*#include <stdio.h>
+
+int		main(void)
+{
+	printf("%s", ft_substr("Salut comment ca va ?", 6, 4));
+	return (0);
+}*/

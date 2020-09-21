@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/09 23:39:23 by mqueguin          #+#    #+#              #
-#    Updated: 2020/09/17 17:12:38 by mqueguin         ###   ########.fr        #
+#    Updated: 2020/09/21 23:15:09 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,10 @@ SRCS		= 		${SRC_DIR}ft_isalnum.c\
 					${SRC_DIR}ft_bzero.c\
 					${SRC_DIR}ft_memcpy.c\
 					${SRC_DIR}ft_memccpy.c\
-#					${SRC_DIR}ft_memmove.c\
+					${SRC_DIR}ft_memcmp.c\
+					${SRC_DIR}ft_calloc.c\
+					${SRC_DIR}ft_substr.c\
+					${SRC_DIR}ft_strjoin.c\
 
 HEAD		=		${HEAD_DIR}libft.h
 

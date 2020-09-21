@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/09 23:07:27 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/21 20:09:55 by mqueguin         ###   ########.fr       */
+/*   Created: 2020/09/21 19:56:55 by mqueguin          #+#    #+#             */
+/*   Updated: 2020/09/21 22:14:22 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
-	size_t	len;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 
-	if (!src)
-		return (0);
 	i = 0;
-	len = ft_strlen(src);
-	if (!dst || !src)
-		return (0);
-	if (dstsize == 0)
-		return (len);
-	while (src[i] && i < dstsize - 1)
-	{
-		dst[i] = src[i];
+	str1 = (const unsigned char*)s1;
+	str2 = (const unsigned char*)s2;
+	while (str1[i] == str2[i] && i < n - 1)
 		i++;
-	}
-	dst[i] = '\0';
-	return (len);
+	return (str1[i] - str2[i]);
 }
