@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 16:46:01 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/09/23 17:02:46 by mqueguin         ###   ########.fr       */
+/*   Created: 2020/09/24 19:08:21 by mqueguin          #+#    #+#             */
+/*   Updated: 2020/10/05 18:09:45 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t size)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	i;
-	unsigned char	*buffer_dst;
-	unsigned char	*buffer_src;
+	char	*str;
+	int		i;
+	int		j;
 
-	buffer_dst = (unsigned char*)dst;
-	buffer_src = (unsigned char*)src;
 	i = 0;
-	if (dst == src)
-		return (dst);
-	if (buffer_src < buffer_dst)
-	{
-		while (++i <= size)
-			buffer_dst[size - i] = buffer_src[size - i];
-	}
-	else
-		ft_memcpy(dst, src, size);
-	return (dst);
+	j = 0;
+	while (s1[i])
+
+}
+
+int		main(int ac, char **av)
+{
+	printf("Result : %s\n", ft_strtrim("Salut voila la chaine a trimer", "avct"));
+	return (0);
 }
