@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/09 23:39:23 by mqueguin          #+#    #+#              #
-#    Updated: 2020/10/14 23:19:27 by mqueguin         ###   ########.fr        #
+#    Updated: 2020/10/15 23:20:44 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS		= 		${SRC_DIR}ft_isalnum.c\
 					${SRC_DIR}ft_strjoin.c\
 					${SRC_DIR}ft_split.c\
 					${SRC_DIR}ft_strtrim.c\
+					${SRC_DIR}ft_strmapi.c\
 					${SRC_DIR}ft_putchar_fd.c\
 					${SRC_DIR}ft_putstr_fd.c\
 					${SRC_DIR}ft_putendl_fd.c\
