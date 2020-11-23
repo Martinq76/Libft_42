@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:08:21 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/10/14 23:21:02 by mqueguin         ###   ########.fr       */
+/*   Updated: 2020/10/16 19:50:39 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 int		ft_check(char c, const char *set)
 {
-	while (*set)
+	int		i;
+
+	i = 0;
+	while (set[i])
 	{
-		if (*set == c)
+		if (set[i] == c)
 			return (1);
-		set++;
+		i++;
 	}
 	return (0);
 }
@@ -26,19 +29,19 @@ int		ft_check(char c, const char *set)
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*str;
-	int		size;
-	int		i;
+	size_t		size;
+	size_t		i;
 
+	i = 0;
 	if (!s1 || !set)
 		return (NULL);
 	while (ft_check(*s1, set))
 		s1++;
 	size = ft_strlen(s1);
-	while (ft_check(s1[--size], set) && size)
+	while (size && ft_check((s1[--size]), set))
 		;
 	if (!(str = (char*)malloc(sizeof(char) * (size + 2))))
 		return (NULL);
-	i = 0;
 	while (i <= size)
 	{
 		str[i] = s1[i];

@@ -6,7 +6,7 @@
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/09 23:26:41 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/10/15 23:21:19 by mqueguin         ###   ########.fr       */
+/*   Updated: 2020/11/12 19:31:18 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef	struct		s_list
+{
+	void			*content;
+	struct	s_list	*next;
+}					t_list;
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -53,5 +59,12 @@ void	ft_putnbr_fd(int n, int fd);
 // ------  PARTIE 2 ------
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+
+// ----- BONUS PART -----
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **alst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+
 
 #endif

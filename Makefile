@@ -6,7 +6,7 @@
 #    By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/09 23:39:23 by mqueguin          #+#    #+#              #
-#    Updated: 2020/10/15 23:20:44 by mqueguin         ###   ########.fr        #
+#    Updated: 2020/11/12 19:32:10 by mqueguin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,9 +49,17 @@ SRCS		= 		${SRC_DIR}ft_isalnum.c\
 					${SRC_DIR}ft_putendl_fd.c\
 					${SRC_DIR}ft_putnbr_fd.c\
 
+SRCS_BONUS	=		${SRC_DIR}ft_lstnew_bonus.c\
+					${SRC_DIR}ft_lstadd_front_bonus.c\
+					${SRC_DIR}ft_lstsize_bonus.c\
+					${SRC_DIR}ft_lstlast_bonus.c\
+
 HEAD		=		${HEAD_DIR}libft.h
 
 OBJS		= ${SRCS:.c=.o}
+
+OBJS_BONUS	= ${SRCS:.c=.o}\
+				${SRCS_BONUS:.c=.o}
 
 NAME		= libft.a
 
@@ -67,16 +75,16 @@ CFLAGS		= -Wall -Wextra -Werror
 ${NAME}:	${OBJS}
 			ar -rc libft.a ${OBJS}
 
-#bonus:
-#			$(CC) $(CFLAGS) $(SRCS_BONUS) -I${HEAD_DIR} -c ${<:.c=.o}
-#			-mv *.o ${SRC_DIR}
-#			ar rc $(NAME) $(OBJS_BONUS)
-#			ranlib $(NAME)
+bonus:
+			$(CC) $(CFLAGS) $(SRCS_BONUS) -I${HEAD_DIR} -c ${<:.c=.o}
+			-mv *.o ${SRC_DIR}
+			ar rc $(NAME) $(OBJS_BONUS)
+			ranlib $(NAME)
 
 all:		${NAME}
 
 clean:
-			${RM} ${OBJS}# ${OBJS_BONUS}
+			${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
 			${RM} ${NAME}

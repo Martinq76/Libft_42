@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mqueguin <mqueguin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 23:11:54 by mqueguin          #+#    #+#             */
-/*   Updated: 2020/10/18 20:05:07 by mqueguin         ###   ########.fr       */
+/*   Created: 2020/10/25 17:19:19 by mqueguin          #+#    #+#             */
+/*   Updated: 2020/10/25 17:29:07 by mqueguin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	write(fd, &c, 1);
+	while (lst != NULL && lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
